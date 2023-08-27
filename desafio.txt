@@ -1,0 +1,47 @@
+<?php
+
+#Faça um codigo que simule a ação de pagamento de uma conta bancaria.
+
+#Você recebera um array com os dados do pagamento do usuario:
+$PaymentStruct = [
+    "nome" => "",
+    "email" => "",
+    "valorTotal" => 0,
+    "products" => [
+        [
+            "name" => "",
+            "quantity" => 0,
+            "unitValue" => 0,
+            "category" => ""
+        ]
+    ],
+    "paymentMethods" => [
+        [
+            "id" => "1",
+            "value" => "100",
+            "type" => "points",
+        ],
+        [
+            "id" => "123424524",
+            "value" => "10.2",
+            "type" => "credit-card-mercado-pago",
+        ],
+        [
+            "id" => "asj7dghas6td",
+            "value" => "12.5",
+            "type" => "credit-card-paypal",
+        ],
+        [
+            "id" => null,
+            "value" => "23",
+            "type" => "voucher",
+        ],
+    ]
+];
+
+#baseado no exemplo acima os dados de produto sempre devem existir caso contrario deve ser levantado um erro generico ao usuario
+#Voce deve pode validar se o email dele é valido ou nao.
+#voce devera salvar os dados "pode ser um codigo fake so salver no file", eu quero que cada registro de paymentMethods seja salvo em uma mesma tabela, com um unico detalhe quando for paypal ele tem que salvar tambem em outra tabela auxiliar so com o id e um texto chamado "paypal pagou"
+#A função que irá salvar tem que estar preparada para ser estendida, e coloca um log dos dados ou enviar email nao deve ser trabalhoso.
+
+#use oque quiser pra fazer o codigo, interface nao é necessario
